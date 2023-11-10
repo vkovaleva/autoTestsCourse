@@ -1,0 +1,25 @@
+{
+  "name": "hometask_10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier --config .prettierrc.json src/**/*.js --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.0.3"
+  }
+}
