@@ -1,0 +1,27 @@
+---------------------------------------------
+Xpath
+---------------------------------------------
+1. //ul[@class="media-list"]/li[1]//img
+2. 
+  2.1 //nav[@class='orbit-header-links international']//li[1]
+  2.2 (//nav[@class='orbit-header-links international']//a[@data-v-item]/..)[last()]
+  2.3 //nav[@class='orbit-header-links international']//a[@data-v-item]
+  2.4 //nav[@class='orbit-header-links international']//a[not(@data-v-item)]
+  2.5 //nav[@class='orbit-header-links international']//li[position() mod 2 != 0]
+3. //*[contains(@class, 'module--header')]/h2/text()
+4. //*[@id="orbit-search-button"]
+5. //*[@class="media-list"]/li[position() > 1]
+
+---------------------------------------------
+CSS selector
+---------------------------------------------
+1. .module--promo .media-list>:first-child img
+2. 
+  2.1 nav.orbit-header-links.international li:first-child
+  2.2 nav.orbit-header-links.international .orb-nav-culture (its better to use xpath here)
+  2.3 nav.orbit-header-links.international a[data-v-item]
+  2.4 nav.orbit-header-links.international a:not([data-v-item])
+  2.5 nav.orbit-header-links.international li:nth-of-type(odd)
+3. text can not find by css selector
+4. #orbit-search-button
+5. .module--promo .media-list>li:nth-of-type(n+2)
