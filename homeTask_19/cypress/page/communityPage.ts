@@ -8,6 +8,10 @@ class CommunityPage extends BasePage {
   newsCardsList() {
     return cy.get('section .card');
   }
+
+  searchInput() {
+    return cy.get('input[type="search"]');
+  }
 }
 
 export default new CommunityPage();

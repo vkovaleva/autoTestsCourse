@@ -3,6 +3,8 @@ import ResultPage from '../page/resultPage';
 import Header from '../page/components/header';
 import InstallModalWindow from '../page/components/installModalWindow';
 import CommunityPage from '../page/communityPage';
+import Footer from '../page/components/footer';
+import SubscribeToNewsLetterPage from '../page/subscribeToNewsLetterPage';
 
 describe('Cypress website tests', () => {
   beforeEach(() => {
@@ -31,6 +33,13 @@ describe('Cypress website tests', () => {
     Header.goToCommunityTab();
     CommunityPage.newsCardsList().then((item) => {
       expect(item.length).to.equal(9);
+    });
+  });
+  it('error should be shown if user subscribes to news letters with empty email field', () => {
+    Footer.moveToSubscribeNewsLetterPage();
+    SubscribeToNewsLetterPage.subscribe(' ');
+    SubscribeToNewsLetterPage.subscribeError().then((error) => {
+      expect(error).to.contain.text('Please enter a valid email address');
     });
   });
 });
